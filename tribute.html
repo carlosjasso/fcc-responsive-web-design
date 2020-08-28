@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FCC: Tribute Page</title>
+        <style>
+            html {
+                font-size: 10px;
+            }
+
+            #main {
+                font-family: Helvetica, sans-serif, Arial;
+                font-size: 2.2rem;
+                text-align: center;
+                color: #0c0c0c;
+                margin: 0;
+                padding: 15px;
+            }
+
+            #article-heading {
+                width: 70%;
+                margin: 0 auto 16px auto;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                border-bottom-color: grey;
+            }
+
+            #title {
+                font-size: 4.4rem;
+            }
+
+            #slogan {
+                font-size: 1.6rem;
+                font-style: italic;
+                line-height: 0;
+            }
+
+            #img-div {
+                background: grey;
+                width: 80%;
+                padding: 8px;
+                border-radius: 5px;
+                margin: 0 auto;
+            }
+
+            #image {
+                max-width: 100%;
+                display: block;
+                height: auto;
+                margin: 0 auto;
+                border-radius: 5px;
+            }
+
+            #img-caption {
+                font-size: 1.4rem;
+                color: white;
+                line-height: 0;
+                margin: 10px 0 5px 0;
+            }
+
+            #headline {
+                font-size: 3.6rem;
+            }
+
+            #tribute-link {
+                color: black;
+            }
+
+            blockquote {
+                font-style: italic;
+                width: 60%;
+                max-width: 600px;
+                margin: 0 auto;
+                text-align: left;
+            }
+
+            ul {
+                max-width: 60%;
+                margin: 0 auto 50px auto;
+                text-align: left;
+            }
+
+            li {
+                margin: 2.4rem 0;
+            }
+
+            @media (max-width: 768px) {
+              #main {
+                font-size: 1.9rem;
+              }
+
+              #title {
+                font-size: 4rem;
+              }
+
+              #slogan {
+                font-size: 1.2rem;
+              }
+
+              #img-caption {
+                font-size: 1rem;
+              }
+
+              #headline {
+                font-size: 3rem;
+              }
+
+              ul {
+                max-width: 85%;
+              }
+            }
+            @media (max-width: 480px) {
+              #main {
+                font-size: 1.6rem;
+              }
+
+              #title {
+                font-size: 3rem;
+              }
+
+              #slogan {
+                font-size: 1rem;
+              }
+
+              #img-caption {
+                font-size: 1rem;
+              }
+
+              #headline {
+                font-size: 2rem;
+              }
+
+              ul {
+                max-width: 100%;
+              }
+
+              blockquote {
+                width: 80%;
+              }
+            }
+        </style>
+    </head>
+    <body>
+        <main id="main">
+            <div id="article-heading">
+                <h1 id="title">Linus Torvalds</h1>
+                <p id="slogan">The human behind <b>the Linux kernel</b> & <b>git</b>!</p>
+            </div>
+            <figure id="img-div">
+              <img
+                id="image"
+                alt="Linus Torvalds, showing a big smile"
+                src="img/linus.jpg"/>
+              <figcaption id="img-caption">
+                Linus Torvalds at LinuxCon Europe 2014
+              </figcaption>
+            </figure>
+            <section id="tribute-info">
+              <h2 id="headline">Linus Torvalds' milestones timeline:</h3>
+              <ul>
+                <li>
+                    <strong>1969</strong> - In December 28<sup>th</sup>, Linus Benedict Torvalds 
+                    was born in Helsinki, Finland
+                </li>
+                <li>
+                    <strong>1988</strong> - Torvalds enrolled at the University of 
+                    Helsinki, graduating with a master's degree in computer science.
+                </li>
+                <li>
+                    <strong>1994</strong> - Linux Version 1.0 was released on March 14<sup>th</sup>.
+                </li>
+                <li>
+                  <strong>1996</strong> - Tux (the official linux mascot) was created by 
+                  Larry Ewing after an initial suggestion made by Alan Cox and 
+                  further refined by Linus Torvalds.
+                </li>
+                <li>
+                    <strong>1998</strong> - Torvalds received an EFF Pioneer Award.
+                </li>
+                <li>
+                    <strong>1999</strong> - He was named by the MIT Technology Review 
+                    TR100 as one of the world's top 100 innovators under age 35. <br>
+                    Also, Red Hat and VA Linux, both leading developers of Linux-based 
+                    software, presented Torvalds with stock options in gratitude for 
+                    his creation.
+                </li>
+                <li>
+                  <strong>2000</strong> - He was 17<sup>th  </sup> in the Time Magazine's "Time 
+                  100: The Most Important People of the Century" poll.
+                </li>
+                <li>
+                  <strong>2005</strong> - Git development began in April. Version 1.0 
+                  was released on December 21<sup>st</sup>.
+                </li>
+                <li>
+                    <strong>2014</strong> - The Eclipse Foundation reported in its annual 
+                    community survey that as of May, Git became the most widely used 
+                    source-code management tool.
+                </li>
+                <li>
+                    <strong>2015</strong> - Stack Overflow has included Version control 
+                    in their annual developer survey and Git was the overwhelming favorite 
+                    of responding developers in these surveys.
+                </li>
+              </ul>
+              <blockquote
+                cite="https://www.goodreads.com/quotes/950610-intelligence-is-the-ability-to-avoid-doing-work-yet-getting"
+              >
+                <p>
+                  "Intelligence is the ability to avoid doing work, yet getting the work 
+                  done."
+                </p>
+                <cite>- Linus Torvalds</cite>
+              </blockquote>
+              <h3>
+                Would you like to learn more about this man? You may want to read 
+                his 
+                <a
+                  id="tribute-link"
+                  href="https://en.wikipedia.org/wiki/Linus_Torvalds"
+                  target="_blank"
+                  >Wikipedia page</a
+                > then.
+              </h3>
+            </section>
+          </main>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
+    </body>
+</html>

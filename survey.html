@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>FCC: Survey Form</title>
+        <style>
+            :root {
+                font-size: 10px;
+            }
+        
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
+                background-image: 
+                    linear-gradient(90deg, #000000c2, #000000c2),
+                    url("img/code.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            #container {
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                max-width: 900px;
+                margin: 0 auto;
+                font-size: 2.2rem;
+                font-family: Helvetica, sans-serif, Arial;
+            }
+
+            #container header {
+                margin: 12px 8px;
+                color: white;
+            }
+
+            #container header #title {
+                text-align: center;
+            }
+
+            #survey-form {
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 5px;
+            }
+
+            #survey-form .form-section {
+                display: flex;
+                flex-direction: column;
+                margin: 20px 12px;
+            }
+
+            #survey-form .form-section label, 
+            #survey-form .form-section p {
+                margin: 0 auto;
+                width: 80%;
+                text-align: left;
+                font-weight: bold;
+            }
+
+            #survey-form .form-section .multi-option-container {
+                display: flex;
+                flex-direction: column;
+                margin-top: 8px;
+            }
+
+            #survey-form .form-section .multi-option {
+                font-weight: normal;
+            }
+
+            #survey-form .form-section .data-input,
+            #survey-form .form-section .data-textarea {
+                width: 80%;
+                margin: 8px auto;
+                border-radius: 5px;
+                padding: 4px 8px;
+                font-size: 1.8rem;
+                color: rgb(65, 65, 65);
+                background: #fff;
+                border: 1px solid silver;
+            }
+
+            #survey-form .form-section #dropdown {
+                width: 82%;
+            }
+
+            #survey-form .form-section .optional {
+                vertical-align: middle;
+                font-size: 1.6rem;
+            }
+
+            #survey-form .submit-button{
+                font-size: 2.2rem;
+                font-weight: bold;
+                color: white;
+                width: 50%;
+                margin: 0 auto;
+                padding: .5rem;
+                background: green;
+                border-radius: 5px;
+                border-style: none;
+                cursor: pointer;
+            }
+
+            @media screen and (max-width: 768px) {
+                #container {
+                    width: 85%;
+                    font-size: 2rem;
+                }
+
+                #survey-form .form-section #dropdown {
+                    width: 83%;
+                }
+
+                #survey-form .form-section .data-input,
+                #survey-form .form-section .data-textarea {
+                    font-size: 1.6rem;
+                }
+            }
+
+            @media screen and (max-width: 425px) {
+                #container {
+                    width: 90%;
+                    font-size: 1.8rem;
+                }
+
+                #survey-form .form-section #dropdown {
+                    width: 85%;
+                }
+
+                #survey-form .form-section .data-input,
+                #survey-form .form-section .data-textarea {
+                    font-size: 1.4rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1 id="title">Version Control Systems</h1>
+                <p id="description">The information entered here will help us have some 
+                    statistics about the current state of the Version Control Systems 
+                    used by developers. Thank you for taking the time to answer the survey.
+                </p>
+            </header>
+            <form id="survey-form">
+                <div class="form-section">
+                    <label id="name-label" for="name">Name</label>
+                    <input 
+                        type="text"
+                        name="name"
+                        id="name"
+                        class="data-input"
+                        placeholder="What's your name?"
+                        required
+                    >
+                </div>
+                <div class="form-section">
+                    <label id="email-label" for="email">Email </label>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        class="data-input"
+                        placeholder="What's your email address?"
+                        required
+                    >
+                </div>
+                <div class="form-section">
+                    <label id="number-label" for="number">Age 
+                        <span class="optional">(optional)</span> 
+                    </label>
+                    <input 
+                        type="number"
+                        name="age"
+                        id="number"
+                        class="data-input"
+                        min="10"
+                        max="150"
+                        placeholder="How old are you?">
+                </div>
+                <div class="form-section">
+                    <p>Which option fits your job title best?</p>
+                    <select id="dropdown" name="title" class="data-input" required>
+                        <option disabled selected value>Select an option</option>
+                        <option value="front-end">Front End Developer</option>
+                        <option value="back-end">Back End Developer</option>
+                        <option value="ux">UX Designer</option>
+                        <option value="full-stack">Full Stack Developer</option>
+                        <option value="optout">What's it to ya?</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-section">
+                    <p>Select the Version Control System that you're most familiar with</p>
+                    <div class="multi-option-container">
+                        <label class="multi-option">
+                            <input
+                                name="vcs"
+                                value="git"
+                                type="radio"
+                                class="data-radio"
+                                checked
+                            >
+                            git
+                        </label>
+                        <label class="multi-option">
+                            <input
+                                name="vcs"
+                                value="svn"
+                                type="radio"
+                                class="data-radio"
+                            >
+                            svn
+                        </label>
+                        <label class="multi-option">
+                            <input
+                                name="vcs"
+                                value="mercurial"
+                                type="radio"
+                                class="data-radio"
+                            >
+                            mercurial
+                        </label>
+                        <label class="multi-option">
+                            <input
+                                name="vcs"
+                                value="bazaar"
+                                type="radio"
+                                class="data-radio"
+                            >
+                            bazaar
+                        </label>
+                        <label class="multi-option">
+                            <input
+                                name="vcs"
+                                value="cvs"
+                                type="radio"
+                                class="data-radio"
+                            >
+                            cvs
+                        </label>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <p>Which of the following interfaces do you feel comfortable with 
+                        when using a Version Control System? 
+                        <span class="optional">(multiple answers supported)</span>
+                    </p>
+                    <div class="multi-option-container">
+                        <label class="multi-option">
+                            <input
+                                name="interface"
+                                value="cli"
+                                type="checkbox"
+                                class="data-checkbox"
+                            >CLI
+                        </label>
+                        <label class="multi-option">
+                            <input
+                                name="interface"
+                                value="gui"
+                                type="checkbox"
+                                class="data-checkbox"
+                            >GUI
+                        </label>
+                        <label class="multi-option">
+                            <input
+                                name="interface"
+                                value="web"
+                                type="checkbox"
+                                class="data-checkbox"
+                            >WEB
+                        </label>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <p>What do you think is the best advantage as a developer 
+                        when working with a Version Control System?
+                    </p>
+                    <textarea
+                        id="comments"
+                        class="data-textarea"
+                        name="comments"
+                        placeholder="Share your comments here..."
+                    ></textarea>
+                </div>
+                <div class="form-section">
+                    <button type="submit" id="submit" class="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
+    </body>
+</html>

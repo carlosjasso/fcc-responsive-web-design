@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/assets/icons/favicon.png" type="image/x-icon">
+        <title>FCC: Personal Portfolio</title>
+        <style>
+            :root {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Helvetica, Arial, sans-serif;
+            }
+
+            #navbar {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
+                width: 100%;
+                background: #901515;
+            }
+
+            #navbar ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            #navbar ul li {
+                margin: 12px 0;
+                margin-right: 24px;
+                font-weight: bold;
+                font-size: 22px;
+                height: 100%;
+            }
+
+            #navbar ul li a {
+                text-decoration: none;
+                color: white;
+            }
+
+            #navbar ul li a:hover {
+                text-decoration: underline;
+            }
+
+            main section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                min-height: 100vh;
+            }
+
+            #welcome-section {
+                background: #464646;
+                color: white;
+            }
+
+            #welcome-section h1 {
+                font-size: 64px;
+                font-weight: bold;
+            }
+
+            #welcome-section p {
+                font-size: 36px;
+            }
+
+            #projects {
+                background: #363653;
+                color: white;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: flex-start;
+            }
+
+            #projects h2 {
+                width: 100%;
+                text-align: center;
+                text-decoration: underline;
+                font-size: 64px;
+            }
+
+            #projects article {
+                min-width: 300px;
+                background-color: #eee;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                transition: transform 0.5s ease-out;
+            }
+
+            #projects article:hover {
+                transform: translateY(-10px);
+            }
+            
+            #projects article a {
+                text-decoration: none;
+                color: #363653;
+            }
+
+            #projects article a img {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                width: 100%;
+            }
+
+            #projects article a h3 {
+                text-align: center;
+            }
+
+            #contact {
+                background: #464646;
+                color: white;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #contact h2 {
+                font-size: 64px;
+                width: 100%;
+                text-align: center;
+            }
+
+            #contact a {
+                text-decoration: none;
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                transition: transform 0.3s ease-out;
+            }
+
+            #contact a:hover {
+                transform: translateY(-10px);
+            }
+
+            #contact a span {
+                vertical-align: middle;
+            }
+
+            #contact-links {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-content: center;
+            }
+
+            .icon {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+            }
+
+            #contact footer {
+                width: 100%;
+                align-self: flex-end;
+                border-top-style: solid;
+                border-width: 2px;
+                border-color: #901515;
+                padding: 12px;
+                text-align: center;
+            }
+
+            @media screen and (max-width: 1024px) {
+                #projects article {
+                    margin: 0 12px 12px 0;
+                }
+            }
+
+            @media screen and (max-width: 570px) {
+                #contact-links {
+                    flex-direction: column;
+                }
+            }
+
+            @media screen and (max-width: 400px) {
+                #navbar ul li {
+                    font-size: 16px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#welcome-section">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Let's connect</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="welcome-section">
+                <h1>Hello! I'm Carlos</h1>
+                <p>Be welcome to my little portfolio page</p>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <article>
+                    <a href="/fcc/tribute" target="_blank">
+                        <img alt="Tribute page capture" src="img/capture-tribute.jpg">
+                        <h3 class="project-tile">Tribute page</h3>
+                    </a>
+                </article>
+                <article>
+                    <a href="/fcc/survey" target="_blank">
+                        <img alt="Survey project capture" src="img/capture-survey.jpg">
+                        <h3 class="project-tile">Survey page</h3>
+                    </a>
+                </article>
+                <article>
+                    <a href="/fcc/plumbus" target="_blank">
+                        <img alt="plumbus project capture" src="img/capture-product.jpg">
+                        <h3 class="project-tile">Product landing page</h3>
+                    </a>
+                </article>
+                <article>
+                    <a href="/fcc/techdoc" target="_blank">
+                        <img alt="Technical documentation project capture" src="img/capture-techdoc.jpg">
+                        <h3 class="project-tile">Technical documentation page</h3>
+                    </a>
+                </article>
+            </section>
+            <section id="contact">
+                <h2>Let's connect!</h2>
+                <article id="contact-links">
+                    <a id="profile-link" 
+                        href="https://www.freecodecamp.org/carlosjasso"
+                        target="_blank">
+                        <span class="icon">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="free-code-camp" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-free-code-camp fa-w-18 fa-7x"><path fill="currentColor" d="M97.22,96.21c10.36-10.65,16-17.12,16-21.9,0-2.76-1.92-5.51-3.83-7.42A14.81,14.81,0,0,0,101,64.05c-8.48,0-20.92,8.79-35.84,25.69C23.68,137,2.51,182.81,3.37,250.34s17.47,117,54.06,161.87C76.22,435.86,90.62,448,100.9,448a13.55,13.55,0,0,0,8.37-3.84c1.91-2.76,3.81-5.63,3.81-8.38,0-5.63-3.86-12.2-13.2-20.55-44.45-42.33-67.32-97-67.48-165C32.25,188.8,54,137.83,97.22,96.21ZM239.47,420.07c.58.37.91.55.91.55Zm93.79.55.17-.13C333.24,420.62,333.17,420.67,333.26,420.62Zm3.13-158.18c-16.24-4.15,50.41-82.89-68.05-177.17,0,0,15.54,49.38-62.83,159.57-74.27,104.35,23.46,168.73,34,175.23-6.73-4.35-47.4-35.7,9.55-128.64,11-18.3,25.53-34.87,43.5-72.16,0,0,15.91,22.45,7.6,71.13C287.7,364,354,342.91,355,343.94c22.75,26.78-17.72,73.51-21.58,76.55,5.49-3.65,117.71-78,33-188.1C360.43,238.4,352.62,266.59,336.39,262.44ZM510.88,89.69C496,72.79,483.52,64,475,64a14.81,14.81,0,0,0-8.39,2.84c-1.91,1.91-3.83,4.66-3.83,7.42,0,4.78,5.6,11.26,16,21.9,43.23,41.61,65,92.59,64.82,154.06-.16,68-23,122.63-67.48,165-9.34,8.35-13.18,14.92-13.2,20.55,0,2.75,1.9,5.62,3.81,8.38A13.61,13.61,0,0,0,475.1,448c10.28,0,24.68-12.13,43.47-35.79,36.59-44.85,53.14-94.38,54.06-161.87S552.32,137,510.88,89.69Z" class=""></path></svg>
+                        </span>
+                        <span>Free Code Camp</span>
+                    </a>
+                    <a id="profile-link" 
+                        href="https://www.freecodecamp.org/carlosjasso"
+                        target="_blank">
+                        <span class="icon">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svg-inline--fa fa-github fa-w-16 fa-7x"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" class=""></path></svg>
+                        </span>
+                        <span>GitHub</span>
+                    </a>
+                    <a id="profile-link" 
+                        href="https://www.freecodecamp.org/carlosjasso"
+                        target="_blank">
+                        <span class="icon">
+                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-envelope fa-w-16 fa-7x"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z" class=""></path></svg>
+                        </span>
+                        <span>E-mail me</span>
+                    </a>
+                </article>
+                <footer>
+                    <h3>*** This is not my actual portfolio but it still looks cool - © 2020 Carlos Jasso</h3>
+                </footer>
+            </section>
+        </main>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>  
+    </body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+        <title>FCC: Product Landing Page</title>
+        <style>
+            body {
+                margin: 0;
+                background: pink;
+            }
+
+            h2 {
+                font-family: Helvetica, sans-serif, Arial;
+                font-weight: bold;
+                margin: 0 auto;
+                width: 100%;
+                margin: 12px auto;
+            }
+
+            #header {
+                position: sticky;
+                position: -webkit-sticky;
+                top: 0;
+            }
+
+            #nav-bar {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                background: #ff7c92;
+                font-family: 'Spicy Rice', cursive;
+            }
+
+            #nav-bar #brand {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+
+            #nav-bar #brand #header-img {
+                width: 48px;
+                margin-left: 48px;
+            }
+
+            #nav-bar .separator {
+                flex: 1;
+            }
+
+            #nav-bar .nav-link {
+                margin-right: 24px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            main {
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            main section {
+                margin-top: 24px;
+            }
+
+            #product-title {
+                display: flex;
+                flex-direction: column;
+                color: black;
+                text-align: center;
+                margin-top: 0;
+            }
+
+            #product-title .title {
+                font-family: 'Lobster', cursive;
+                font-size: 108px;
+            }
+
+            #features {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #features #plumbus {
+                width: 150px;
+            }
+
+            #features ul {
+                list-style-type: square;
+            }
+
+            #what-does {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #video-wrapper {
+                width: 100%;
+            }
+
+            #what-does #video {
+                width: 560px;
+                height: 315px; 
+            }
+
+            #pricing {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            #pricing h2 {
+                width: 100%;
+            }
+
+            #pricing .price-card {
+                border-style: solid;
+                border-width: 2px;
+                border-color: white;
+                border-radius: 5px;
+                background: #fbdac7;
+                width: 190px;
+                margin-top: 8px;
+            }
+
+            .price-card .packet {
+                font-family: 'Lobster', cursive;
+                background: #f59a9c;
+                padding: 8px;
+                text-align: center;
+                font-size: 24px;
+            }
+
+            .price-card .comes-with {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 8px;
+            }
+
+            .comes-with .grid {
+                list-style: none;
+                padding-left: 0;
+                width: 100%;
+                display: grid;
+                grid-template-columns: auto;
+                grid-template-rows: auto auto auto;
+            }
+
+            .grid .grid-item {
+                text-align: center;
+                line-height: 24px;
+            }
+
+            .comes-with .price {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+
+            .price-card button,
+            #form #submit {
+                border-style: none;
+                background: #f59a9c;
+                color: white;
+                border-radius: 5px;
+                font-size: 18px;
+                padding: 4px 8px;
+                cursor: pointer;
+            }
+
+            #suscription #form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #form #email {
+                padding: 4px 8px;
+                border-radius: 5px;
+                margin-bottom: 8px;
+                width: 250px;
+            }
+
+            #form #submit {
+                margin-bottom: 12px;
+            }
+
+            footer {
+                background: #ff7c92;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding: 6px 0;
+            }
+
+            footer .footer-links a, 
+            footer .license {
+                margin-right: 12px;
+                text-decoration: none;
+            }
+
+            @media screen and (max-width: 900px) {
+                main {
+                    width: 80%;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                main {
+                    width: 90%;
+                }
+            }
+
+            @media screen and (max-width: 680px) {
+                main {
+                    width: 95%;
+                }
+
+                #what-does #video {
+                    width: 300px;
+                    height: 169px; 
+                }
+
+                #product-title .title {
+                font-size: 84px;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <nav id="nav-bar">
+                <div id="brand">
+                    <img id="header-img" alt="cube logo" src="img/cube.png">
+                    <span id="brand-name">Random products</span>
+                </div>
+                <div id="separator" class="separator"></div>
+                <div id="links">
+                    <a class="nav-link" href="#features">Features</a>
+                    <a class="nav-link" href="#what-does">How is it made?</a>
+                    <a class="nav-link" href="#pricing">Pricing</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section id="product-title">
+                <span class="title">Plumbus</span>
+                <span class="description">A Plumbus will aid many things in life, making life easier. With proper maintenance, 
+                    handling, storage, and urging, Plumbus will provide you with a lifetime of better 
+                    living and happiness.
+                </span>
+            </section>
+            <section id="features">
+                <img id="plumbus" alt="a plumbus picture" src="img/plumbus.png">
+                <ul>
+                    <li>The plumbus now knows!</li>
+                    <li>It can get sticky!</li>
+                    <li>It's fabulous with kitchens!</li>
+                    <li>Uses GHG connective tissue!</li>
+                    <li>It's now easier to keep powder dry!</li>
+                </ul>
+            </section>
+            <section id="what-does">
+                <h2>Made under the best standards!</h2>
+                <iframe id="video" src="https://www.youtube.com/embed/eMJk4y9NGvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+            <section id="pricing">
+                <h2>Get yours!</h2>
+                <div class="price-card">
+                    <div class="packet">
+                        <span>1 Plumbus</span>
+                    </div>
+                    <div class="comes-with">
+                        <span class="price">8 GREPPLES</span>
+                        <span>What's in the box?</span>
+                        <ul class="grid">
+                            <li class="grid-item">Just a plumbus</li>
+                            <li class="grid-item">&nbsp;</li>
+                            <li class="grid-item">&nbsp;</li>
+                        </ul>
+                        <button>Select</button>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <div class="packet">
+                        <span>1 Plumbus - Plus!</span>
+                    </div>
+                    <div class="comes-with">
+                        <span class="price">11 GREPPLES</span>
+                        <span>What's in the box?</span>
+                        <ul class="grid">
+                            <li class="grid-item">A plumbus</li>
+                            <li class="grid-item">Advanced user manual</li>
+                            <li class="grid-item">&nbsp;</li>
+                        </ul>
+                        <button>Select</button>
+                    </div>
+                </div>
+                <div class="price-card">
+                    <div class="packet">
+                        <span>Plumbus - Combo</span>
+                    </div>
+                    <div class="comes-with">
+                        <span class="price">19.5 GREPPLES</span>
+                        <span>What's in the box?</span>
+                        <ul class="grid">
+                            <li class="grid-item">A plumbus</li>
+                            <li class="grid-item">An extra plumbus</li>
+                            <li class="grid-item">Yet, another plumbus</li>
+                        </ul>
+                        <button>Select</button>
+                    </div>
+                </div>
+            </section>
+            <section id="suscription">
+                <h2>Wanna get all news about the plumbus?</h2>
+                <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input type="email" id="email" name="email" placeholder="What's your email address?" required>
+                    <input type="submit" id="submit" value="Suscribe" class="btn">
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="license">© Random Products</div>
+        </footer>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>  
+    </body>
+</html>

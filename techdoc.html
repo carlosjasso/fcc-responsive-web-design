@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="/assets/icons/favicon.png" type="image/x-icon">
+        <title>FCC: Technical Documentation Page</title>
+        <style>
+            body {
+                background: #eee;
+                font-family: Helvetica, Arial, sans-serif;
+                line-height: 1.25;
+                margin: 0;
+            }
+
+            #navbar {
+                position: fixed;
+                min-width: 265px;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #696969;
+                color: #eee;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+
+            #navbar header {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bolder;
+                height: 70px;
+                font-size: 24px;
+            }
+
+            #navbar ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                line-height: 48px;
+                font-weight: bold;
+            }
+
+            #navbar ul li {
+                border-bottom-style: solid;
+                border-color: #eee;
+                border-width: 1px;
+                padding-left: 8px
+            }
+
+            #navbar ul li a {
+                text-decoration: none;
+                cursor: pointer;
+                color: #eee;
+            }
+
+            #main-doc {
+                position: absolute;
+                margin: 12px 0;
+                margin-left: 277px;
+            }
+
+            #main-doc code {
+                background: rgba(190, 190, 190, 0.4);
+                border-radius: 5px;
+                padding: 8px;
+                font-family: monospace;
+                font-size: 1rem;
+            }
+
+            @media screen and (max-width: 850px) {
+                #navbar {
+                    position: static;
+                    width: 100%;
+                    height: 250px;
+                    z-index: 1;
+                }
+
+                #main-doc {
+                    position: absolute;
+                    margin: 12px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="navbar">
+            <header>APT Documentation</header>
+            <ul>
+                <li>
+                    <a class="nav-link" href="#Introduction_to_APT">Introduction to APT</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Update_repositories_information">Update repositories information</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Install_a_package">Install a package</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Upgrade_available_packages">Upgrade available packages</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#List_installed_packages">List installed packages</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#Uninstall_a_package">Uninstall a package</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#References">References</a>
+                </li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Introduction_to_APT">
+                <header><h2>Introduction to APT</h2></header>
+                <article>
+                    <p src="https://en.wikipedia.org/wiki/APT_(software)">
+                        <b>Advanced Package Tool</b>, or <b>APT</b>, is a free-software user 
+                        interface that works with core libraries to handle the installation 
+                        and removal of software on Debian, Ubuntu, and related Linux 
+                        distributions. APT simplifies the process of managing software on 
+                        Unix-like computer systems by automating the retrieval, configuration 
+                        and installation of software packages, either from precompiled files 
+                        or by compiling source code.
+                    </p>
+                </article>
+            </section>
+            <section class="main-section" id="Update_repositories_information">
+                <header><h2>Update repositories information</h2></header>
+                <p>
+                    APT is a very powerful tool which can help you not only install packages 
+                    but also keeping them all up to date with very simple commands.
+                </p>
+                <p>
+                    For APT to know what the latest versions of each of the packages are 
+                    available, it has to retrieve the latest packages information from each of 
+                    the repositories setup for APT. To accomplish this, here's the command:
+                </p>
+                <code>
+                    $ sudo apt update
+                </code>
+            </section>
+            <section class="main-section" id="Install_a_package">
+                <header><h2>Install a package</h2></header>
+                <p src="https://itsfoss.com/apt-get-linux-guide/">
+                    If you know the name of the package, you can easily install it using the 
+                    command below:
+                </p>
+                <code>
+                    $ sudo apt install &lt;package_name&gt;
+                </code>
+                <p>
+                    Just replace the &lt;package_name&gt; with your desired package. Suppose I 
+                    wanted to install Pinta image editor. All I’d need to do is use the 
+                    command below:
+                </p>
+                <code>
+                    $ sudo apt install pinta
+                </code>
+            </section>
+            <section class="main-section" id="Upgrade_available_packages">
+                <header><h2>Upgrade available packages</h2></header>
+                <p src="https://itsfoss.com/apt-get-linux-guide/">
+                    Once you have updated the package database, you can upgrade the installed 
+                    packages. The most convenient way is to upgrade all the packages that have 
+                    updates available. You can use the command below for this purpose:
+                </p>
+                <code>
+                    $ sudo apt upgrade
+                </code>
+                <p>
+                    To upgrade only a specific program, use the command below:
+                </p>
+                <code>
+                    sudo apt upgrade &lt;package_name&gt;
+                </code>
+            </section>
+            <section class="main-section" id="List_installed_packages">
+                <header><h2>List installed packages</h2></header>
+                <p>
+                    There might be times when you want to upgrade an already installed package 
+                    but you may not remember its name. For that, once can make a list of all 
+                    installed packages to review them. To make this list, run this command:
+                </p>
+                <code>
+                    $ apt list --installed
+                </code>
+                <p>
+                    The output will show the list of installed packages (including the ones 
+                    features by the system distribution) sorted alphabetically. Each line item 
+                    will show the package name and its version.
+                </p>
+            </section>
+            <section class="main-section" id="Uninstall_a_package">
+                <header><h2>Uninstall a package</h2></header>
+                <p src="https://itsfoss.com/apt-get-linux-guide/">
+                    Installing packages isn’t the only thing you can do with apt. You can 
+                    also remove packages with it. All you need to do is to use the command in 
+                    this manner:
+                </p>
+                <code>
+                    $ sudo apt remove &lt;package_name&gt;
+                </code>
+                <p>
+                    Auto-completion works here as well. So just start typing package name and 
+                    press tab, and it will suggest all the installed packages starting with 
+                    those letters.
+                </p>
+            </section>
+            <section class="main-section" id="References">
+                <header><h2>References</h2></header>
+                <p>
+                    Excerpts to make this article possible have been taken from the 
+                    following sources:
+                </p>
+                <ul>
+                    <li>
+                        <a href="https://itsfoss.com/apt-get-linux-guide/">
+                            Using apt-get Commands In Linux [Complete Beginners Guide]
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/APT_(software)">
+                            APT (software)
+                        </a>
+                    </li>
+                    <li>My</li>
+                    <li>Own</li>
+                    <li>Experience</li>
+                </ul>
+            </section>
+        </main>
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>  
+    </body>
+</html>
